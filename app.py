@@ -10,8 +10,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def hello():
     if request.method == 'GET':
-        json_output = seek_and_destroy("DY575086091BR")
-        return json_output
+        return "oi"
 
 
 @app.route('/rastreamento', methods=['POST'])

@@ -14,10 +14,8 @@ def seek_and_destroy(code):
 
     CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
-    chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
-
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = chrome_bin
+    chrome_options.binary_location = '.apt/usr/bin/google-chrome-stable'
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')

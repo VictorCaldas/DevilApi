@@ -1,5 +1,6 @@
 #coding=utf-8
 import os
+from flask import Response
 from flask import Flask, request, jsonify, json, send_from_directory
 
 from kroni import seek_and_destroy
@@ -21,7 +22,9 @@ def rastreamento():
             cod = (d['cod'])
             json_output = seek_and_destroy(cod)
 
-            return json_output
+            resp = Response(json_output, status=200, mimetype='application/json')
+
+            return resp
 
 
 @app.route('/favicon.ico')

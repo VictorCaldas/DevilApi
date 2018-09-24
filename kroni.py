@@ -12,14 +12,14 @@ def seek_and_destroy(code):
     print("Rodando Seek And Destroy")
     url = "https://www2.correios.com.br/sistemas/rastreamento/"
 
-    chrome_exec_shim = os.environ.get("GOOGLE_CHROME_BIN", "chromedriver")
+    chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = chrome_exec_shim
+    chrome_options.binary_location = chrome_bin
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
 
-    driver = webdriver.Chrome(executable_path='/app/development/chromedriver', chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path="chromedriver", chrome_options=chrome_options)
 
 
     print("Chrome pronto!")

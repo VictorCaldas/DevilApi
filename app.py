@@ -13,9 +13,9 @@ def hello():
         return "oi"
 
 
-@app.route('/rastreamento', methods=['GET'])
+@app.route('/rastreamento', methods=['POST'])
 def rastreamento():
-    if request.method == 'GET':
+    if request.method == 'POST':
         if request.headers['Content-Type'] == 'application/json':
             d = json.loads(request.data)
             cod = (d['cod'])

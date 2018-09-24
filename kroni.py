@@ -25,6 +25,7 @@ def seek_and_destroy(code):
     # redenrizando tela
     driver.get(url)
 
+
     # acao na pagina
     print("buscando elementos")
     driver.find_element_by_id("objetos").clear()

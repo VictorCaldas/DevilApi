@@ -7,7 +7,7 @@ from Kroni import seek_and_destroy
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST','GET'])
 def hello():
     if request.method == 'GET':
         json_output = seek_and_destroy("DY575086091BR")

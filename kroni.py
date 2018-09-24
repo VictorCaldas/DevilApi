@@ -10,7 +10,6 @@ from flask import json
 def seek_and_destroy(code):
     global json_rastreamento
     print("Rodando Seek And Destroy")
-    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
     url = "https://www2.correios.com.br/sistemas/rastreamento/"
 
     # versao headless

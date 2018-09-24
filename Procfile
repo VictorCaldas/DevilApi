@@ -1,1 +1,1 @@
-web: python Lilith.py
+web: gunicorn lilith:app

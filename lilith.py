@@ -2,7 +2,7 @@
 import os
 from flask import Flask, request, jsonify, json, send_from_directory
 
-from Kroni import seek_and_destroy
+from kroni import seek_and_destroy
 
 app = Flask(__name__)
 

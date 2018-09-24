@@ -1,1 +1,1 @@
-web: python Lilith.py -p $PORT
+superset runserver -p $PORT

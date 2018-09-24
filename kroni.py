@@ -1,4 +1,5 @@
 # coding=utf-8
+import os
 import time
 
 from bs4 import BeautifulSoup
@@ -9,13 +10,13 @@ from flask import json
 def seek_and_destroy(code):
     global json_rastreamento
     print("Rodando Seek And Destroy")
+    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
     url = "https://www2.correios.com.br/sistemas/rastreamento/"
 
     # versao headless
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome('/Users/victorcaldas/PycharmProjects/devilApi/chromedriver',
-                              chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
     print("Chrome pronto!")
     # versao sem headless

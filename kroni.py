@@ -16,7 +16,8 @@ def seek_and_destroy(code):
     # versao headless
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+    chrome_exec_shim = os.environ.get("GOOGLE_CHROME_BIN", "chromedriver")
+    driver = webdriver.Chrome(executable_path=chrome_exec_shim, chrome_options=chrome_options)
 
     print("Chrome pronto!")
     # versao sem headless

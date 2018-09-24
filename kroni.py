@@ -1,7 +1,7 @@
 # coding=utf-8
 import os
 import time
-
+from random import randint
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from flask import json
@@ -29,6 +29,7 @@ def seek_and_destroy(code):
 
     # redenrizando tela
     driver.get(url)
+    time.sleep(randint(1, 5))
 
 
     # acao na pagina

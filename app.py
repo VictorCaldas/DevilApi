@@ -11,10 +11,10 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def hello():
     if request.method == 'GET':
-        return "DevilApi"
+        return "DevilApi - 2"
 
 
-@app.route('/rastreamento', methods=['POST'])
+@app.route('/rastreamento', methods=['GET', 'POST'])
 def rastreamento():
     if request.method == 'POST':
         if request.headers['Content-Type'] == 'application/json':
@@ -25,6 +25,8 @@ def rastreamento():
             resp = Response(json_output, status=200, mimetype='application/json')
 
             return resp
+        else:
+            return "erro"
 
 
 @app.route('/favicon.ico')

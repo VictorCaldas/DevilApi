@@ -18,6 +18,7 @@ def seek_and_destroy(code):
     chrome_exec_shim = "/app/.chromedriver/bin/chromedriver"
     driver = webdriver.Chrome(executable_path=chrome_exec_shim, chrome_options=chrome_options)
 
+
     print("Chrome pronto!")
     # versao sem headless
     driver_visible = webdriver.Chrome('/Users/victorcaldas/PycharmProjects/devilApi/chromedriver')

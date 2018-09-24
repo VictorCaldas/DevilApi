@@ -1,1 +1,1 @@
- web: gunicorn Lilith.wsgi
+web: python Lilith.py -p $PORT

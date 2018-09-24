@@ -1,1 +1,1 @@
-superset runserver -p $PORT
+web: gunicorn hello:app

@@ -32,7 +32,6 @@ def seek_and_destroy(code):
 
     print("Chrome pronto!")
     # versao sem headless
-    driver_visible = webdriver.Chrome('/Users/victorcaldas/PycharmProjects/devilApi/chromedriver')
 
     # redenrizando tela
     driver.get(url)

@@ -35,6 +35,7 @@ def seek_and_destroy(code):
 
     # redenrizando tela
     driver.get(url)
+    time.sleep(randint(1, 2))
 
 
     # acao na pagina

@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def hello():
     if request.method == 'GET':
-        return "DevilApi - 2"
+        return "DevilApi - 3"
 
 
 @app.route('/rastreamento', methods=['GET', 'POST'])

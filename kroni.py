@@ -14,20 +14,20 @@ def seek_and_destroy(code):
 
     chrome_options = webdriver.ChromeOptions()
 
-    # This line is also for heroku
-    chrome_options.binary_location = os.environ["GOOGLE_CHROME_SHIM"]
-    print(os.environ["GOOGLE_CHROME_BIN"])
-    print(os.environ["GOOGLE_CHROME_SHIM"])
-    # print(os.environ["chromedriver"])
-    print("FOUND CHROME!!!!!")
+    # init
+    # used for deploy on heroku
+    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
+    chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = chrome_bin
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument('headless')
+    chrome_options.add_argument('window-size=1200x600')
+    # End used for deploy on heroku
 
-    chrome_options.binary_location = '/app/.apt/opt/google/chrome/chrome'
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--no-sandbox')
-
-    driver = webdriver.Chrome(executable_path=os.environ["CHROMEDRIVER_PATH"], chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
 
     print("Chrome pronto!")

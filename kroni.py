@@ -11,11 +11,13 @@ def seek_and_destroy(code):
     global json_rastreamento
     print("Rodando Seek And Destroy")
     url = "https://www2.correios.com.br/sistemas/rastreamento/"
+    chrome_exec_shim = os.environ.get("GOOGLE_CHROME_BIN", "chromedriver")
 
-    # versao headless
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
     chrome_exec_shim = "/app/.apt/opt/google/chrome/chrome"
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = chrome_exec_shim
+    chrome_options.add_argument('--headless')
+
     driver = webdriver.Chrome(executable_path=chrome_exec_shim, chrome_options=chrome_options)
 
 

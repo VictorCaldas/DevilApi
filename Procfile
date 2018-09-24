@@ -1,1 +1,1 @@
-web: gunicorn lilith:app
+web: gunicorn app:app --log-file=-

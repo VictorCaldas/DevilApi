@@ -1,1 +1,1 @@
-web: python Lilith.py
+web: python Lilith.py -p $PORT

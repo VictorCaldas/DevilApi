@@ -7,7 +7,7 @@ from Kroni import seek_and_destroy
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/', methods=['GET'])
 def hello():
     if request.method == 'GET':
         json_output = seek_and_destroy("DY575086091BR")
@@ -26,4 +26,5 @@ def rastreamento():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

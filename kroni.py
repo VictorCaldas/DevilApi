@@ -12,8 +12,6 @@ def seek_and_destroy(code):
     print("Rodando Seek And Destroy")
     url = "https://www2.correios.com.br/sistemas/rastreamento/"
 
-    chrome_options = webdriver.ChromeOptions()
-
     # init
     # used for deploy on heroku
     CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
@@ -29,14 +27,11 @@ def seek_and_destroy(code):
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
-
     print("Chrome pronto!")
-    # versao sem headless
 
     # redenrizando tela
     driver.get(url)
     time.sleep(randint(1, 2))
-
 
     # acao na pagina
     print("buscando elementos")
